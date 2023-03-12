@@ -1,3 +1,9 @@
+import { SearchBar } from '../components/SearchBar/SearchBar';
+
 export function MainPage() {
-  return <h1>Main page</h1>;
+  return (
+    <>
+      <SearchBar />
+    </>
+  );
 }
