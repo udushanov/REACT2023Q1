@@ -7,6 +7,7 @@ import { ICard } from '../components/models/card';
 export class MainPage extends Component {
   state = {
     cards: [],
+    searchString: '',
   };
 
   getCards = async () => {
@@ -20,10 +21,27 @@ export class MainPage extends Component {
     this.getCards();
   }
 
+  getInputValue = (value: string) => {
+    if (value.trim().length === 0) {
+      this.setState((prev) => ({ ...prev }));
+    }
+
+    this.setState((prev) => ({ ...prev, searchString: value }));
+  };
+
   render(): JSX.Element {
+    let cards = this.state.cards;
+    const searchString = this.state.searchString;
+
+    if (searchString.trim().length > 0) {
+      cards = cards.filter((card: ICard) =>
+        card.title.toLocaleLowerCase().includes(this.state.searchString.toLocaleLowerCase())
+      );
+    }
+
     return (
       <>
-        <SearchBar />
+        <SearchBar onInputValue={this.getInputValue} />
         <div
           style={{
             display: 'flex',
@@ -33,7 +51,7 @@ export class MainPage extends Component {
             paddingBottom: '100px',
           }}
         >
-          {this.state.cards.map((card: ICard) => {
+          {cards.map((card: ICard) => {
             return <Card card={card} key={card.id} />;
           })}
         </div>

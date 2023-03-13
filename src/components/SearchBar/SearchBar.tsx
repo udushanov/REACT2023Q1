@@ -1,7 +1,11 @@
 import { Component } from 'react';
 import Styles from './SearchBar.module.css';
 
-export class SearchBar extends Component {
+interface SearchBarProps {
+  onInputValue: (value: string) => void;
+}
+
+export class SearchBar extends Component<SearchBarProps> {
   state = {
     value: '',
   };
@@ -23,6 +27,7 @@ export class SearchBar extends Component {
     this.setState({
       value: event.target.value,
     });
+    this.props.onInputValue(event.target.value);
   };
 
   render(): JSX.Element {
