@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
-import Styles from './Navigation.module.css';
+import Styles from './Header.module.css';
 
-export function Navigation() {
+export function Header() {
   return (
-    <nav className={Styles.Navigation}>
+    <nav className={Styles.Header}>
       <div className={Styles.Wrapper}>
         <span className={Styles.Logo}>React 20223Q1</span>
         <span>

@@ -2,13 +2,13 @@ import { Routes, Route } from 'react-router-dom';
 import { MainPage } from './pages/MainPage';
 import { AboutPage } from './pages/AboutPage';
 import { NotFoundPage } from './pages/NotFoundPage';
-import { Navigation } from './components/Navigation/Navigation';
+import { Header } from './components/Header/Header';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <Navigation />
+      <Header />
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/about" element={<AboutPage />} />

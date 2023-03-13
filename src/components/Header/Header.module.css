@@ -1,11 +1,11 @@
-.Navigation {
+.Header {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   height: 60px;
   background-color: #881e6e;
-  color: #fff;
+  color: #ffffff;
 }
 
 .Wrapper {
@@ -22,6 +22,6 @@
 
 .Link {
   text-decoration: none;
-  color: #fff;
+  color: #ffffff;
   margin-right: 10px;
 }

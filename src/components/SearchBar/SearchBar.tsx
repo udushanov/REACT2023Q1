@@ -6,7 +6,7 @@ export class SearchBar extends Component {
     value: '',
   };
 
-  componentDidMount() {
+  componentDidMount(): void {
     const savedInput = localStorage.getItem('inputValue');
     if (savedInput) {
       this.setState({
@@ -15,7 +15,7 @@ export class SearchBar extends Component {
     }
   }
 
-  componentWillUnmount() {
+  componentWillUnmount(): void {
     localStorage.setItem('inputValue', this.state.value);
   }
 
@@ -25,7 +25,7 @@ export class SearchBar extends Component {
     });
   };
 
-  render() {
+  render(): JSX.Element {
     const iconStyles = Styles.Icon;
     const cls = ['fa-solid fa-magnifying-glass', iconStyles];
 
