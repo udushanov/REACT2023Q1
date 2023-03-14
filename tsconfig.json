@@ -16,7 +16,8 @@
     "noImplicitAny": true,
     "noFallthroughCasesInSwitch": true,
     "resolveJsonModule": true,
+    "types": ["vitest/globals"]
   },
-  "include": ["src"],
+  "include": ["src", "./setupTest.ts", "src/test/setup.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
