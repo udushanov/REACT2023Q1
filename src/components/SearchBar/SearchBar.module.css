@@ -1,0 +1,22 @@
+.SearchBar {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+
+.Input {
+  width: 50%;
+  border: 2px solid #881e6e;
+  border-radius: 20px;
+  padding: 10px 40px;
+  font-size: 16px;
+  outline: none;
+}
+
+.Icon {
+  position: absolute;
+  top: 13px;
+  left: 315px;
+  color: #881e6e;
+}
