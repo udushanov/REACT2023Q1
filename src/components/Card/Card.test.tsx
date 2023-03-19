@@ -14,46 +14,41 @@ const mockCard = {
 };
 
 describe('<Card />', () => {
-  it('renders rate: text', () => {
+  beforeEach(() => {
     render(<Card card={mockCard} />);
+  });
+
+  it('renders rate: text', () => {
     const message = screen.getByText(/rate:/i);
     expect(message).toBeInTheDocument();
   });
 
   it('renders count: text', () => {
-    render(<Card card={mockCard} />);
     const message = screen.getByText(/count:/i);
     expect(message).toBeInTheDocument();
   });
-  
-  it('renders Buy now button', () => {
-    render(<Card card={mockCard} />);
-    const message = screen.getByRole('button', {name: /Buy now/i});
-    expect(message).toBeInTheDocument();
-  })
-});
 
-describe('<Card />', () => {
+  it('renders Buy now button', () => {
+    const message = screen.getByRole('button', { name: /Buy now/i });
+    expect(message).toBeInTheDocument();
+  });
+
   it('renders title text', () => {
-    render(<Card card={mockCard} />);
     const message = screen.getByText(/title/i);
     expect(message).toBeInTheDocument();
   });
 
   it('renders price number', () => {
-    render(<Card card={mockCard} />);
     const message = screen.getByText(/123/i);
     expect(message).toBeInTheDocument();
   });
 
   it('renders rate number', () => {
-    render(<Card card={mockCard} />);
     const message = screen.getByText(/456/i);
     expect(message).toBeInTheDocument();
   });
 
   it('renders count number', () => {
-    render(<Card card={mockCard} />);
     const message = screen.getByText(/789/i);
     expect(message).toBeInTheDocument();
   });
