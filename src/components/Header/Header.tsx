@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Styles from './Header.module.css';
 
 export function Header() {
@@ -7,12 +7,21 @@ export function Header() {
       <div className={Styles.Wrapper}>
         <span className={Styles.Logo}>React 20223Q1</span>
         <span>
-          <Link className={Styles.Link} to="/">
+          <NavLink className={({ isActive }) => (isActive ? Styles.Active : Styles.Link)} to="/">
             Main
-          </Link>
-          <Link className={Styles.Link} to="/about">
+          </NavLink>
+          <NavLink
+            className={({ isActive }) => (isActive ? Styles.Active : Styles.Link)}
+            to="/forms"
+          >
+            Forms
+          </NavLink>
+          <NavLink
+            className={({ isActive }) => (isActive ? Styles.Active : Styles.Link)}
+            to="/about"
+          >
             About us
-          </Link>
+          </NavLink>
         </span>
       </div>
     </nav>

@@ -1,9 +1,9 @@
 import { Component } from 'react';
-import { Card } from '../components/Card/Card';
-import { SearchBar } from '../components/SearchBar/SearchBar';
+import { Card } from '../../components/Card/Card';
+import { SearchBar } from '../../components/SearchBar/SearchBar';
 import axios, { AxiosError } from 'axios';
-import { ICard } from '../components/models/card';
-import { ErrorMessage } from '../components/ErrorMessage/ErrorMessage';
+import { ICard } from '../../components/models/card';
+import { ErrorMessage } from '../../components/ErrorMessage/ErrorMessage';
 
 export class MainPage extends Component {
   state = {
